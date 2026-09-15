@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://fieldwork.example/sitemap.xml

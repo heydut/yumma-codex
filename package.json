@@ -1,0 +1,35 @@
+{
+  "name": "fieldwork",
+  "private": true,
+  "version": "1.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite --host 127.0.0.1",
+    "typecheck": "tsc --noEmit",
+    "validate": "yummacss-canon",
+    "assets": "node scripts/generate-assets.mjs",
+    "build": "npm run typecheck && npm run validate && npm run assets && vite build && vite build --ssr src/entry-server.tsx --outDir .build/server && node scripts/prerender.mjs",
+    "preview": "node scripts/serve.mjs",
+    "test": "playwright test",
+    "check": "node scripts/check.mjs",
+    "check:launch": "node scripts/check-launch.mjs"
+  },
+  "dependencies": {
+    "react": "^19.1.1",
+    "react-dom": "^19.1.1"
+  },
+  "devDependencies": {
+    "@axe-core/playwright": "^4.10.2",
+    "@playwright/test": "^1.55.0",
+    "@types/node": "^22.18.0",
+    "@types/react": "^19.1.12",
+    "@types/react-dom": "^19.1.9",
+    "@vitejs/plugin-react": "^5.0.2",
+    "@yummacss/canon": "latest",
+    "@yummacss/vite": "latest",
+    "sharp": "0.35.4",
+    "typescript": "^5.9.2",
+    "vite": "^7.1.5",
+    "yummacss": "latest"
+  }
+}
